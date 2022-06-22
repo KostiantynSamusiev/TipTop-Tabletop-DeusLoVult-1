@@ -101,14 +101,13 @@ body {
         text-align: center;
         background: url("../img/btn.png") 0 0 / cover no-repeat;
         width: 235px;
-        height: 60px;
+        height: 58px;
         margin-bottom: 17px;
-
-
     }
 
     .buy_now {
         background: url("../img/btn_buy_now.png") 0 0 / cover no-repeat;
+
     }
 
     a {
@@ -122,17 +121,15 @@ body {
         line-height: 23px;
     }
 
-
 }
 
 .about_game {
     display: flex;
     flex-direction: column;
-    margin-bottom: 130px;
+    margin-bottom: 100px;
 
     h2 {
         @include title();
-
     }
 
     img {
@@ -144,14 +141,16 @@ body {
     p {
         @include discription();
         margin-bottom: 20px;
-
     }
 
     .show {
         display: none;
     }
 
+
 }
+
+
 
 
 .key_features_container {
@@ -162,7 +161,8 @@ body {
     }
 
     h2 {
-        @include title()
+        @include title();
+        margin-bottom: 45px;
     }
 
     .key_option {
@@ -179,6 +179,11 @@ body {
 
     .angel {
         text-align: end;
+        margin-bottom: 70px;
+
+        img {
+            height: 150px;
+        }
     }
 
 
@@ -199,8 +204,6 @@ body {
             border-right: 2.5px solid rgba(63, 18, 18, 0.5);
             text-align: center;
 
-
-
             .count {
                 font-weight: 700;
                 font-size: 20px;
@@ -209,9 +212,16 @@ body {
             }
         }
 
-        .game_rules:nth-child(odd) {
+        .game_rules:nth-child(1),
+        .game_rules:nth-child(3) {
+            border-right: 2.5px solid rgba(63, 18, 18, 0.5);
             border-left: 2.5px solid rgba(63, 18, 18, 0.5);
+
         }
+
+        // .game_rules:nth-child(odd) {
+        //     border-left: 2.5px solid rgba(63, 18, 18, 0.5);
+        // }
 
         .game_rules:nth-child(1),
         .game_rules:nth-child(2) {
@@ -225,7 +235,7 @@ body {
             align-items: center;
 
             img {
-                height: 50%;
+                height: 70%;
             }
         }
 
@@ -255,10 +265,6 @@ body {
             @include discription()
         }
     }
-
-
-
-
 }
 
 .adons_for_game {
@@ -267,7 +273,7 @@ body {
     .stock {
         padding-top: 16px;
         @include card_stock();
-        margin-top: 30px;
+
     }
 
     h2 {
@@ -303,8 +309,6 @@ body {
 
     }
 
-    .adon_card:nth-child(4),
-    .adon_card:nth-child(5) {}
 
     .card_disciption {
         p:first-child {
@@ -397,11 +401,12 @@ body {
 
     .card_btn_buy {
         font-family: "Almendra-Regular", sans-serif;
-        background-image: url(../img/buy-now-btn.png);
-        background-size: 101%;
+        background: url(../img/buy-now-btn.png) 0 0/ contain no-repeat;
+        background-size: 100%;
+        box-shadow: 0px 9px 9px -4px rgb(0 0 0 / 54%);
         border: none;
-        height: 40px;
         width: 307px;
+        padding: 10px 10px 10px 10px;
         font-weight: 700;
         color: #B49138;
         align-self: center;
@@ -496,11 +501,12 @@ body {
 
     .card_btn_buy {
         font-family: "Almendra-Regular", sans-serif;
-        background-image: url(../img/buy-now-btn.png);
-        background-size: 101%;
+        background: url(../img/buy-now-btn.png) 0 0/ contain no-repeat;
+        background-size: 100%;
+        box-shadow: 0px 9px 9px -4px rgb(0 0 0 / 54%);
         border: none;
-        height: 40px;
         width: 307px;
+        padding: 10px 10px 10px 10px;
         color: #B49138;
         align-self: center;
         margin-bottom: 13px;
@@ -539,6 +545,8 @@ body {
         }
     }
 
+
+
     .slick-slide:not(.slick-center) {
 
         .carousel-image {
@@ -563,6 +571,7 @@ body {
 
     .slick-prev,
     .slick-next {
+        z-index: 1;
         top: 105%;
     }
 
@@ -571,29 +580,52 @@ body {
     }
 
     .slick-prev {
-        left: 8%;
+        left: 5%;
     }
 
     .slick-dots {
+
         bottom: -45px;
     }
 
+
+
+
     .slick-dots {
-        li.slick-active {
-            button:before {
+
+        li {
+            button::before {
                 opacity: 1;
-                color: #3F1212;
+                font-size: 10px;
+                color: #3F1212
+            }
+
+
+        }
+
+        li:not(.slick-active) {
+            button::after {
+                font-family: 'slick';
+                line-height: 20px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20px;
+                height: 20px;
+                content: '•';
+                text-align: center;
+                font-size: 6px;
+                color: #e2dcd0;
+                ;
             }
         }
-    }
 
+    }
 
 }
 
 
-
 .faq_container {
-
     margin-bottom: 50px;
 
     h2 {
@@ -604,8 +636,6 @@ body {
     .custom-select {
         padding-top: 30px;
         border-top: 2.5px solid rgba(63, 18, 18, 0.5);
-
-
     }
 
     .custom-select:last-child {
@@ -620,25 +650,16 @@ body {
         position: relative;
         margin-bottom: 35px;
         width: 80%;
-
     }
 
     .select-main-title {
         display: flex;
         justify-content: center;
-
     }
-
-
-
-
 
     .rotate {
         transform: rotate(45deg);
     }
-
-
-
 }
 
 .explanation {
@@ -665,25 +686,19 @@ body {
     right: 5%;
 }
 
-
-
 .subscribe-container {
     background: url("../img/frame-1.png") 0 0 / cover no-repeat;
     width: 344px;
-    height: 533px;
+    height: 520px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     position: relative;
-
     margin-bottom: 165px;
 
-
     .subscribe-content {
-
-
 
         h2 {
             @include title();
@@ -695,25 +710,22 @@ body {
             margin-bottom: 30px;
         }
 
-
-
         .subscribe_form_email input[type="email"] {
             background: rgba(62, 18, 19, 0.1);
-            height: 44px;
-            width: 237px;
+            padding: 10px 55px 10px 55px;
             border: none;
-
 
         }
 
         .subscribe_form_email input::placeholder {
+
             font-weight: 700;
             font-size: 13px;
             line-height: 18px;
-            text-align: center;
+            text-align: left;
             text-transform: uppercase;
-
             color: #7A7A79;
+
         }
 
     }
@@ -726,8 +738,9 @@ body {
     width: 277.79px;
     height: 252.49px;
     background: url(../img/cats-for-frame.png) 0 0/cover no-repeat;
-    background-size: 252.49px 277.79px;
+
     top: -90px;
+    transform: rotate(10deg);
 }
 
 .about-web-site {
@@ -735,10 +748,10 @@ body {
     text-align: center;
     width: 70%;
     margin: 0 auto;
+    margin-bottom: 37px;
 
     p {
         margin-bottom: 15px;
-
     }
 
     a {
@@ -746,23 +759,19 @@ body {
         text-decoration: underline;
     }
 
-    margin-bottom: 37px;
+
 }
 
 
 
 .footer {
-
+    background: url(../img/footer-pic.png) 0 0 no-repeat;
     display: flex;
     flex-direction: column;
     text-align: center;
     background: inherit;
 
-
-
     .social-media-container {
-
-
         .icons-first {
             margin-bottom: 35px;
         }
@@ -778,25 +787,32 @@ body {
             flex-wrap: wrap;
             width: 53px;
             justify-content: space-around;
+            padding: 10px 10px;
 
 
             img {
                 height: 64px;
-
                 align-items: center;
             }
         }
     }
 
+    .footer-pic {
+        img {
+            width: 100%;
+        }
+    }
 
     a {
         @include links();
         text-align: center;
-
     }
 
-
-
+    .social-media:hover {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+    }
 }
 
 @media (min-width: 767px) {
@@ -804,7 +820,6 @@ body {
     .main_wraper {
         padding: 0 35px;
     }
-
 
     .header_inner {
         h1 {
@@ -817,6 +832,7 @@ body {
 
 
     .navigation {
+        margin-bottom: 150px;
         background: url("../img/tablet-background.png") 0 10px;
 
         .navigation_links {
@@ -824,9 +840,6 @@ body {
             flex-wrap: wrap;
             justify-content: space-around;
             width: 80%;
-
-
-
         }
     }
 
@@ -843,10 +856,10 @@ body {
         }
 
         .about-game-content {
+            margin-bottom: 249px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-
 
             .show {
                 display: block;
@@ -858,15 +871,10 @@ body {
 
             .photo-box:first-child {
 
-
-
                 img {
-
                     margin-bottom: 25px;
                 }
             }
-
-
 
             .about-game-text {
                 width: 335px;
@@ -882,8 +890,6 @@ body {
                 }
             }
         }
-
-
     }
 
     .key_features_container {
@@ -907,12 +913,12 @@ body {
 
         .angel {
             width: 100%;
+            margin-bottom: 100px;
 
             img {
-                height: 400px;
+                height: 200px;
             }
         }
-
 
         .game_rules_container {
             justify-content: start;
@@ -922,7 +928,6 @@ body {
 
             .game_rules {
                 width: 174px;
-
             }
 
             .game_rules:nth-child(2) {
@@ -934,8 +939,6 @@ body {
             .game_rules:nth-child(2) {
                 margin-bottom: 0;
             }
-
-
         }
     }
 
@@ -943,12 +946,15 @@ body {
     .game_rules_container {
 
         .game_rules {
+            justify-content: center;
+
             .rule {
+                height: 45%;
+
                 img {
                     height: 100%;
                 }
             }
-
         }
     }
 
@@ -972,14 +978,14 @@ body {
 
     }
 
-    .adons_for_game {
 
+
+    .adons_for_game {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         font-weight: 700;
         margin: 0 -14px;
-
         margin-bottom: 210px;
 
 
@@ -989,151 +995,222 @@ body {
             line-height: 55px;
             width: 100%;
             margin-bottom: 60px;
-
         }
 
 
         .adon_card {
             width: 335px;
             margin: 0 14px 60px;
-        }
-    }
-
-    .special_offers_container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 250px;
-        font-weight: 700;
-        margin: 210px -14px;
-
-
-        h2 {
-            font-weight: 700;
-            font-size: 45px;
-            line-height: 55px;
-            width: 100%;
 
         }
 
-        .offer_card {
-            width: 335px;
-            margin: 0 14px 0;
+
+
+        .adon_card:nth-child(2),
+        .adon_card:nth-child(4),
+        .adon_card:nth-child(6) {
+            .name_adon {
+                margin-top: 15px;
+            }
         }
-
     }
 
-    .carousel {
-        margin-bottom: 266px;
-    }
 
     .faq_container {
-        h2 {
-            font-weight: 700;
-            font-size: 60px;
-            line-height: 55px;
-            margin-bottom: 74px;
-        }
-
         .faq_quetion {
-            font-weight: 700;
             font-size: 30px;
-
-        }
-
-        .dropdown-arrow {
-            border-right: 0.25rem solid black;
-            border-bottom: 0.25rem solid black;
-            width: 1rem;
-            height: 1rem;
         }
     }
 
     .subscribe-container {
         background: url(../img/frame-tablet.png) 0 0/cover no-repeat;
+        background-size: 100%;
         width: 700px;
-        height: 470px;
-        margin: 0 auto;
-
-        display: flex;
-        flex-direction: row;
-        justify-content: end;
-        margin-bottom: 136px;
 
         .subscribe-content {
-            align-self: center;
-            margin-right: 110px;
-        }
+            width: 50%;
+            margin-right: 5%;
+            margin-left: auto;
+            padding-bottom: 10%;
 
+            h2 {
+                font-size: 45px;
+            }
+
+            p {
+                width: 60%;
+                font-size: 20px;
+                margin: 15px auto 30px;
+            }
+        }
+    }
+
+    .subscribe-container::before {
+        top: 115px;
+        width: 350px;
+        height: 330px;
     }
 
 
-    .carousel {
-
-        .slick-next {
-            top: 50%;
-            right: 5%;
-        }
-
-        .slick-prev {
-            top: 50%;
-        }
-
-
-
-        .slick-next:before,
-        .slick-prev::before {
-            opacity: 1;
-            color: white;
-        }
-
-
-    }
-
-    .subscribe-container:before {
-        position: absolute;
-        content: "";
-        width: 376px;
-        height: 342px;
-        background: url(../img/cats-for-frame.png) 0 0/cover no-repeat;
-        background-size: 376px 342px;
-        top: 140px;
-        left: -20px;
-    }
 
     .footer {
-        background: url(../img/footer-background-tablet.png) 0 0/cover no-repeat;
-        background-size: auto 1098px;
-        width: 700px;
-        height: 1098px;
-        margin: 0 auto;
-
+        background: url(../img/footer-background-tablet.png) 0 0 / contain no-repeat;
+        background-size: 100%;
+        height: auto;
+        padding-bottom: 112%;
 
         .social-media-container {
-            margin-top: 120px;
+
+            margin-top: 17%;
 
             .icons-first,
             .icons-second {
+                width: 85%;
+                margin: 0 auto;
                 justify-content: space-evenly;
             }
         }
+    }
+
+    .footer-pic {
+        display: none;
+    }
+
+
+}
 
 
 
-        .footer-pic {
-            display: none;
-        }
+
+.special_offers_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 250px;
+    font-weight: 700;
+    margin: 210px -14px;
+
+
+
+
+    h2 {
+        font-weight: 700;
+        font-size: 45px;
+        line-height: 55px;
+        width: 100%;
+
+    }
+
+
+
+    .offer_card {
+        width: 335px;
+        margin: 0 14px 0;
+    }
+
+    .chance {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 17px;
     }
 
 }
 
-@media (min-width: 1080px) {
+.carousel {
+    margin-bottom: 266px;
+}
 
+.faq_container {
+    margin-bottom: 220px;
+
+    h2 {
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 55px;
+        margin-bottom: 74px;
+    }
+
+
+
+    .dropdown-arrow {
+        border-right: 0.25rem solid black;
+        border-bottom: 0.25rem solid black;
+        width: 0.7rem;
+        height: 0.7rem;
+    }
+}
+
+// .subscribe-container {
+//     // background: url(../img/frame-1) 0 0/cover no-repeat;
+//     width: 100%;
+//     height: 602px;
+//     margin: 0 auto;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: end;
+//     margin-bottom: 136px;
+
+//     .subscribe-content {
+//         align-self: center;
+//         margin-right: 110px;
+//     }
+
+// }
+
+
+.carousel {
+
+    .slick-next {
+        top: 50%;
+        right: 5%;
+    }
+
+    .slick-prev {
+        top: 50%;
+    }
+
+
+
+    .slick-next:before,
+    .slick-prev::before {
+        opacity: 1;
+        color: white;
+    }
+
+
+}
+
+
+
+// .footer {
+//     // background: url(../img/footer-pic.png) 0 0/cover no-repeat;
+//     // background-size: 100%;
+//     // width: auto;
+//     // height: 40%;
+//     // // padding-bottom: 10%;
+
+//     // .social-media-container {
+//     //     margin-top: 120px;
+
+//     //     .icons-first,
+//     //     .icons-second {
+//     //         justify-content: space-evenly;
+//     //     }
+//     // }
+
+
+
+//     .footer-pic {
+//         display: none;
+//     }
+// }
+
+
+@media (min-width: 1080px) {
 
     .main_wraper {
         padding: 0 0;
     }
-
 
     .header {
         .header_inner {
@@ -1143,7 +1220,6 @@ body {
             height: 0;
             overflow: hidden;
             position: relative;
-
         }
 
         h1 {
@@ -1153,14 +1229,16 @@ body {
             bottom: 40px;
             width: 60%;
             padding-left: 20%;
-
         }
 
     }
 
     .navigation {
-        background: url(../img/tablet-background.png) 0 -15px;
+        width: 97.5%;
+        margin: 0 auto;
+        background: url(../img/tablet-background.png) 110% -15px;
         height: 170px;
+        margin-bottom: 235px;
 
         .navigation_links {
             width: 100%;
@@ -1168,7 +1246,6 @@ body {
     }
 
     .about_game {
-
         padding: 0 99px;
 
         h2 {
@@ -1185,7 +1262,6 @@ body {
                 width: 45%;
             }
 
-
             .about-game-text {
                 width: 100%;
                 margin-bottom: 65px;
@@ -1198,8 +1274,6 @@ body {
             }
 
             .left-part {
-
-
                 display: flex;
                 flex-direction: column;
                 width: 45%;
@@ -1212,11 +1286,7 @@ body {
                     order: 2;
                 }
             }
-
-
         }
-
-
     }
 
 
@@ -1226,12 +1296,7 @@ body {
 
         img {
             height: 133px;
-
         }
-
-
-
-
     }
 
     .key_features_container {
@@ -1242,23 +1307,19 @@ body {
             text-align: center;
         }
 
-
-
-
         .game_rules_container {
+            margin-bottom: 220px;
+
             .game_rules {
+
                 width: 25%;
 
                 .count {
-
                     font-weight: 700;
                     font-size: 40px;
                     line-height: 55px;
                 }
-
             }
-
-
         }
 
         .key_option {
@@ -1267,12 +1328,14 @@ body {
                 font-size: 18px;
                 line-height: 23px;
             }
+        }
 
+        .angel {
+            padding: 0 112px;
         }
     }
 
     .box_contents_container {
-
 
         h2 {
             font-weight: 700;
@@ -1293,9 +1356,9 @@ body {
 
         .left-part,
         .right-part {
+
             width: 30%;
         }
-
     }
 
     .left-part {
@@ -1304,7 +1367,8 @@ body {
     }
 
     .adons_for_game {
-
+        margin: 0 0;
+        margin-bottom: 250px;
 
 
         h2 {
@@ -1320,6 +1384,20 @@ body {
             img {
                 width: 90%;
             }
+
+
+        }
+
+        .adon_card:nth-child(2),
+        .adon_card:nth-child(4) {
+            .name_adon {
+                margin-top: 22px;
+            }
+        }
+
+        .stock {
+            font-size: 18px;
+            line-height: 23px;
         }
 
         .name_adon,
@@ -1351,7 +1429,7 @@ body {
             font-size: 18px;
             line-height: 23px;
             width: 452px;
-            height: 60px;
+
         }
 
         .add::before {
@@ -1367,6 +1445,7 @@ body {
 
 
     .special_offers_container {
+        margin: 0 0;
         margin-bottom: 250px;
 
         h2 {
@@ -1375,14 +1454,10 @@ body {
             margin-bottom: 60px;
         }
 
-
         .stock {
             font-size: 18px;
             line-height: 23px;
         }
-
-
-
 
         .name_offer {
             font-weight: 700;
@@ -1396,18 +1471,28 @@ body {
         }
 
         .offer_card {
-
             width: 452px;
 
             img {
                 width: 90%;
-
             }
         }
 
 
+
+
         .offer_card:first-child {
             margin-left: 28px;
+        }
+
+        .offer_card:last-child {
+            .name_offer::before {
+                left: 15%;
+            }
+
+            .name_offer::after {
+                right: 15%;
+            }
         }
 
         .offer_include {
@@ -1428,7 +1513,6 @@ body {
         }
 
         .where_to_buy {
-
             font-weight: 400;
             font-size: 18px;
             line-height: 23px;
@@ -1442,15 +1526,16 @@ body {
             line-height: 23px;
             margin-bottom: 20px;
             width: 415px;
-            height: 55px;
+            height: 100%;
             background-size: 100%;
-
         }
     }
 
     .faq_container {
         width: 90%;
         margin: 50px auto;
+        margin-bottom: 250px;
+
 
         .select-main-title {
             font-weight: 700;
@@ -1474,8 +1559,33 @@ body {
 
 
 
+    .subscribe-container {
+        width: 920px;
+        height: 600px;
+
+
+
+
+
+        .subscribe-content {
+            padding-bottom: unset;
+
+            h2 {
+                font-size: 60px;
+            }
+        }
+    }
+
+    .subscribe-container::before {
+        width: 500px;
+        height: 456px;
+        background-size: 500px 456px;
+        transform: rotate(10deg);
+    }
+
+
     .about-web-site {
-        width: 25%;
+        width: 30%;
 
 
     }
@@ -1491,13 +1601,12 @@ body {
             display: flex;
             justify-content: space-between;
             margin: 0;
+            padding: 0 3%;
 
             .icons-first,
             .icons-second {
-
+                margin: unset;
                 justify-content: start;
-
-
             }
 
             .icons-first {
@@ -1510,9 +1619,6 @@ body {
                 display: flex;
                 justify-content: space-around;
             }
-
         }
     }
-
-
 }
