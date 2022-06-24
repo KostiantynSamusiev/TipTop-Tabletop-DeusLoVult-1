@@ -14,7 +14,8 @@ let arrow = document.querySelectorAll('.dropdown-arrow');
           {
             breakpoint: 768,
             settings: {
-              centerMode: false      
+              centerMode: false,
+              dots: false    
             }
           },
           {
